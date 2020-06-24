@@ -45,23 +45,13 @@ export class StateEditorDialog extends Overlay {
 
     this.content.classList.add('neuroglancer-state-editor');
 
-    const button1 = this.applyButton = document.createElement('button');
-    button1.textContent = 'Apply changes';
-    this.content.appendChild(button1);
-    button1.addEventListener('click', () => this.applyChanges());
-    button1.disabled = true;
+    const button = this.applyButton = document.createElement('button');
+    button.textContent = 'Apply changes';
+    this.content.appendChild(button);
+    button.addEventListener('click', () => this.applyChanges());
+    button.disabled = true;
 
-    // Add download button
-    const button2 = this.downloadButton = document.createElement('button');
-    button2.textContent = 'Download';
-    this.content.appendChild(button2);
-    button2.addEventListener('click', () => {
-        let filename = window.prompt('Enter file name', 'state.json');
-        let text = this.getJson();
-        this.dyanmicDownloadByHtmlTag(filename, text);
-    });
-
-      this.textEditor = CodeMirror(_element => {}, <any>{
+    this.textEditor = CodeMirror(_element => {}, <any>{
       value: '',
       mode: {'name': 'javascript', json: true},
       foldGutter: true,
@@ -134,18 +124,5 @@ export class StateEditorDialog extends Overlay {
 
   getJson() {
     return JSON.stringify(getCachedJson(this.viewer.state).value, null, '  ');
-  }
-
-  private dyanmicDownloadByHtmlTag(fileName: string | null, text: string) {
-    if (fileName === null) {
-        fileName = 'test.json';
-    }
-    let element = document.createElement('a');
-    const fileType = 'text/json';
-    element.setAttribute('href', `data:${fileType};charset=utf-8,${encodeURIComponent(text)}`);
-    element.setAttribute('download', fileName);
-
-    var event = new MouseEvent('click');
-    element.dispatchEvent(event);
   }
 }
