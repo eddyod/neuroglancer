@@ -792,7 +792,7 @@ export class CoordinateSpaceTransformWidget extends RefCounted {
     for (let outputDim = 0; outputDim < rank; ++outputDim) {
       for (let inputDim = 0; inputDim <= rank; ++inputDim) {
         const coeffElement = coefficientElements[inputDim * rank + outputDim];
-        coeffElement.value = transform[inputDim * (rank + 1) + outputDim].toString();
+        coeffElement.value = (Math.round(transform[inputDim * (rank + 1) + outputDim] * 1000) / 1000).toString();
         coeffElement.dataset.isValid = 'true';
         updateInputFieldWidth(coeffElement);
       }
