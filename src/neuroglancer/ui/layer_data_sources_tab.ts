@@ -227,22 +227,22 @@ export class LoadedDataSourceView extends RefCounted {
 
     /* START OF CHANGE: instructions */
     const moveLeft = makeIcon({text: '←', title: 'Move Left', onClick: () => {
-      transformWidget.handleOffsetsTransform(-10, 'x');
+      transformWidget.handleOffsetsTransform(-100, 'x');
     }});
     const moveRight = makeIcon({text: '→', title: 'Move right', onClick: () => {
-      transformWidget.handleOffsetsTransform(10, 'x');
+      transformWidget.handleOffsetsTransform(100, 'x');
     }});
     const moveUp = makeIcon({text: '↑', title: 'Move up', onClick: () => {
-      transformWidget.handleOffsetsTransform(-10, 'y');
+      transformWidget.handleOffsetsTransform(-100, 'y');
     }});
     const moveDown = makeIcon({text: '↓', title: 'Move down', onClick: () => {
-      transformWidget.handleOffsetsTransform(10, 'y');
+      transformWidget.handleOffsetsTransform(100, 'y');
     }});
     const moveIn = makeIcon({text: '↑', title: 'Move in', onClick: () => {
-      transformWidget.handleOffsetsTransform(10, 'z');
+      transformWidget.handleOffsetsTransform(100/43, 'z');
     }});
     const moveOut = makeIcon({text: '↓', title: 'Move out', onClick: () => {
-      transformWidget.handleOffsetsTransform(-10, 'z');
+      transformWidget.handleOffsetsTransform(-100/43, 'z');
     }});
     const rotZLeft = makeIcon({text: '←', title: 'Z-axis rotate left', onClick: () => {
       transformWidget.handleMatrixTransform(-5, 0, 0, 1);
