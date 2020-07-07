@@ -69,9 +69,9 @@
     "no-unexpected-multiline": true,
     "use-isnan": true,
     "valid-typeof": true,
-    "curly": true,
+    "curly": false,
     "radix": true,
-    "no-shadowed-variable": true,
+    "no-shadowed-variable": false,
     "no-extra-semi": true
   }
 }
