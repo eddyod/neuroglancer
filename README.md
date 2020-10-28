@@ -1,3 +1,10 @@
+# Modified Neuroglancer for Active Brain Altas Project
+The original Neuroglancer is modified to suit the needs for anatomists in Active Brain Atlas project. The newest version is hosted at <https://activebrainatlas.ucsd.edu/ng>. Feel free to try it and submit issues.
+
+- [For developers](docs/develop.md)
+- [New features](docs/features.md)
+
+# Original README
 Neuroglancer is a WebGL-based viewer for volumetric data.  It is capable of displaying arbitrary (non axis-aligned) cross-sectional views of volumetric data, as well as 3-D meshes and line-segment based models (skeletons).
 
 This is not an official Google product.
